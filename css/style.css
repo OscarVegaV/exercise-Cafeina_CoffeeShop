@@ -21,6 +21,44 @@ html{
   scroll-padding-top: 9rem;           /*lo que pasa en elmentos scroll agrega espaciado 9rem en la parte sup */
   scroll-behavior: smooth;            /*velocidad del scroll despacio(smooth)*/
 }
-body{
+/* body{ 
   background: var(--bg);
+}*/
+header{
+  background: var(--bg);
+  display: flex;                      /*propiedad hace que todos los elementos dentro de el se acomoden de una manera flexible*/
+  align-items: center;                /*todos los items se acomodan al centro*/
+  justify-content: space-between;     /*se ajusta de forma horiz y genera un espacio entre cada elemento*/
+  padding: 1.5rem 7%;                 /*altura y lados del header*/
+  border-bottom: var(--border);       /*borde de abajo del Header*/
+  position: fixed;                    /*posicion fija , abajo, iz, derec*/
+  top: 0;                            
+  left: 0;
+  right: 0;
+  z-index: 1000;                      /* eje z(da profundidad), el elemento se muestre por ensima de otro  */
+}
+header .logo img{                     /*caracteristicas al logo*/
+  height: 6rem;
+}
+header .navbar a{                     /*caracteristicas a los elementos de las etiquetas  */
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+header .navbar a:hover{
+  color: var(--main-color);
+  border-bottom: 1.rem solid var(--main-color);
+  padding-bottom: .5rem;
+}
+header .icons div{                  /*caracteristicas icons dentro del header*/
+  color: #fff;
+  cursor: pointer;                  /*cursor dentro del icono sea de manita*/
+  font-size: 2.5 rem;
+  margin-left: 2rem;
+}
+header .icons div:hover{            /*cambio de color de los iconos dentro del header*/
+  color: var(--main-color);
+}
+#menu-btn{                          /*id menu- btn*/
+  display: none;                    /*display (informacion);none(que no se muestre nada)el icono no va aparecer en la pagina*/
 }
