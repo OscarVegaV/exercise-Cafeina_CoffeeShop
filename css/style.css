@@ -1,0 +1,26 @@
+:root{
+  --main-color: #d3ad7f;
+  --black: #13131a;
+  --bg: #010103;
+  --border: .1rem solid rgba(255,255,255,.3);
+}
+*{                                    /*contenido General ***  */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;             /* propiedad principal FLEX BOX*/
+  outline: none;                      /*sin contorno*/
+  border: 0;        
+  text-decoration: none;              /*elimina el subrayado del hipervinculo*/
+  text-transform: capitalize;         /* la primera letra del hipervinculo en mayuscula*/
+  transition: .2s linear ;            /*tiempo de transicion inicial (.2s) y el valor en que termina (linear)*/
+}
+html{
+  font-size: 62.5%;                   /*texto en % en cualquier pantalla*/
+  overflow-x: hidden;                 /*cualquie cosa que se salga de ejeX (horiz) se ocualta.*/
+  scroll-padding-top: 9rem;           /*lo que pasa en elmentos scroll agrega espaciado 9rem en la parte sup */
+  scroll-behavior: smooth;            /*velocidad del scroll despacio(smooth)*/
+}
+body{
+  background: var(--bg);
+}
