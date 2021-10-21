@@ -21,9 +21,9 @@ html{
   scroll-padding-top: 9rem;           /*lo que pasa en elmentos scroll agrega espaciado 9rem en la parte sup */
   scroll-behavior: smooth;            /*velocidad del scroll despacio(smooth)*/
 }
-/* body{ 
+body{ 
   background: var(--bg);
-}*/
+}
 header{
   background: var(--bg);
   display: flex;                      /*propiedad hace que todos los elementos dentro de el se acomoden de una manera flexible*/
@@ -93,4 +93,50 @@ header .search-form label{
 }
 header .search-form label:hover{
   color: var(--main-color);
+}
+header .cart-items-container{
+  position: absolute;                   /*se basa en la posicion absoluta de la pantalla*/
+  top: 100%;
+  right: -100;
+  height: calc(100vh-9.5rem);           /*al 100% de la altura donde se este viendo se le resta 9.5rem*/
+  width: 35rem;
+  background: #fff;
+  padding: 0 1.5rem;
+}
+header .cart-items-container.active{    /*cuando se le da click al carrito se activa la clase */
+  right: 0;                             /*movimiento de derecha hacia a dentro*/
+}
+header .cart-items-container .cart-item{
+  position: relative;                   /*se fija en el elemento padre y se acomoda apartir de ahi*/
+  margin: 2rem 0;
+  display: flex;                        /*se mueve de forma flexible segun las propiedades*/
+  align-items: center;
+  gap: 1.5rem;                          /* define las propiedades entre filas y columnas */
+}
+header .cart-items-container .cart-item .fa-times{
+  position: absolute;                   /*pos absoluta basado en el mismo*/
+  top: 1rem;
+  right: 1rem;
+  font-size:  2rem;                 
+  cursor: pointer;
+  color: var(--black);  
+}
+header.cart-items-container .cart-item .fa-times:hover{
+  color: var(--main-color);
+}
+header.cart-items-container .cart-item img{
+  height:  7rem;
+}
+header.cart-items-container .cart-item .content h3{
+  font-size: 2rem;
+  color: var(--black);
+  padding-bottom: 5rem;
+}
+header.cart-items-container .cart-item .content .price{
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+header.cart-items-container .cart-item .content .btn{
+  width: 100%;
+  text-align: center;
 }
