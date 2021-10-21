@@ -37,6 +37,20 @@ header{
   right: 0;
   z-index: 1000;                      /* eje z(da profundidad), el elemento se muestre por ensima de otro  */
 }
+section{                              /*le da un pading a toda la seccion x y (texto a la iz del home)*/
+  padding: 2rem 7%;           
+}
+.btn{                                 /*agregando caracteristicas a todos las clases ***btn**botones***/
+  margin-top: 1rem;
+  display: inline-block;              /*que se vea en linea con los elementos q estan antes, en un solo bloque*/
+  padding: .9rem 3rem;
+  font-size: 1.7rem;
+  background: var(--main-color);
+  cursor: pointer;
+}
+.btn:hover{                           /*todos los botones ban a tener esa clase*/
+  letter-spacing: .2rem;
+}
 header .logo img{                     /*caracteristicas al logo*/
   height: 6rem;
 }
@@ -139,4 +153,27 @@ header .cart-items-container .cart-item .content .price{  /*color y tamano de te
 header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   width: 100%;
   text-align: center;
+}
+.home{                                       
+  min-height: 100vh;                                     /*altura minima del H de donde se vea*/
+  display: flex;
+  align-items: center;
+  background: url(../img/home-img.jpeg) no-repeat;      /*agregando img (../ para entrar a otras carpetas); norepit evita que la img se vea mas veces*/
+  background-size: cover;                               /*va a tener el 100% de la altura */
+  background-position: center;                          /*Img se va acomodar desde el centro hacia los lados de la pantalla */
+}
+.home .content{                                         /*tamano maximo*/
+  max-width: 60rem;
+}
+.home .content h3{                                    /* texto del home*/
+  font-size: 6rem;
+  text-transform: uppercase;                           /* transforma el text en mayusculas */
+  color: #fff;
+}
+.home .content p{              /*tamano y contenido del Parrafo*/
+  font-size: 2rem;
+  font-weight: lighter;        /*es una version de bold mas delgadita*/
+  line-height: 1.8rem;
+  padding: 1rem 0;
+  color: #eee;
 }
