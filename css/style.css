@@ -13,13 +13,13 @@
   border: 0;        
   text-decoration: none;              /*elimina el subrayado del hipervinculo*/
   text-transform: capitalize;         /* la primera letra del hipervinculo en mayuscula*/
-  transition: .2s linear ;            /*tiempo de transicion inicial (.2s) y el valor en que termina (linear)*/
+  transition: .2s linear ;            /*tiempo de transicion inicial (.2s) y el valor en que termina (linear) para los links internos*/
 }
 html{
   font-size: 62.5%;                   /*texto en % en cualquier pantalla*/
   overflow-x: hidden;                 /*cualquie cosa que se salga de ejeX (horiz) se ocualta.*/
   scroll-padding-top: 9rem;           /*lo que pasa en elmentos scroll agrega espaciado 9rem en la parte sup */
-  scroll-behavior: smooth;            /*velocidad del scroll despacio(smooth)*/
+  scroll-behavior: smooth;            /*velocidad del scroll despacio(smooth) para los links internos*/
 }
 body{ 
   background: var(--bg);
@@ -47,9 +47,21 @@ section{                              /*le da un pading a toda la seccion x y (t
   font-size: 1.7rem;
   background: var(--main-color);
   cursor: pointer;
+  color: #fff;
 }
 .btn:hover{                           /*todos los botones ban a tener esa clase*/
   letter-spacing: .2rem;
+}
+.heading{
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4.5rem;
+}
+.heading span{
+  color: var(--main-color);
+  text-transform: uppercase;
 }
 header .logo img{                     /*caracteristicas al logo*/
   height: 6rem;
@@ -83,7 +95,7 @@ header .search-form{
   background: #fff;
   width: 50rem;
   height: 5rem;
-  display: flex;
+  display: flex;                      /*elemento padre ocupar de display flex */
   align-items: center;
   transform: scale(0);                /**(se agranda)altura 0*/
   transform-origin: top;              /*modificacion en la parte de arriba*/
@@ -128,7 +140,7 @@ header .cart-items-container .cart-item{
   gap: 1.5rem;                          /* define las propiedades entre filas y columnas */
 }
 header .cart-items-container .cart-item .fa-times{
-  position: absolute;                   /*pos absoluta basado en el mismo*/
+  position: absolute;                   /*pos absoluta basado en el mismo contenedor*/
   top: 1rem;
   right: 1rem;
   font-size:  2rem;                 
@@ -176,4 +188,64 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   line-height: 1.8rem;
   padding: 1rem 0;
   color: #eee;
+}
+.about .row{
+  display: flex;               /*el row es cont principal para que el movimito flexible sea heredado para lo de adentro*/
+  align-items: center;
+  background: var(--black);
+  flex-wrap: wrap;             /*cualquier elemento que no cabe hacia lo ancho que se pase hacia abajo(salto de line)*/
+}
+.about .row .image{            /* caracteristicas del flex leer bien */
+  flex: 1 1 45rem;             /*1 y 1(grow\srink)mantiene la originalidad de la imagen  45rem(basis) tamano inicial*/
+}
+.about .row .image img{
+  width: 100%;
+}
+.about .row .content{          /* caracteristicas del flex leer bien */
+  flex: 1 1 45rem;             /*1 y 1(grow\srink)mantiene la originalidad de la imagen  45rem(basis) tamano inicial*/
+  padding: 2rem;               /*separacion de los bordes*/
+}
+.about .row .content h3{
+  font-size: 3rem;
+  color: #fff;
+}
+.about .row .content p{
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+.menu .box-container{                                            /*  inpirado en bootstrap OJO solo contenedor **12 grid **/
+  display: grid;                                                 /* el navegador interpreta una cuadricula */
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));   /* como quier que sea la estructura (auto-fit)tenga un ancho automatico X cada fila*/
+  gap: 1.5rem;                                                   /*  */
+}
+.menu .box-container .box{
+  padding: 5rem;
+  text-align: center;
+  border: var(--border);
+}
+.menu .box-container .box img{
+  height: 10rem;
+}
+.menu .box-container .box h3{
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+.menu .box-container .box .price{
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 5rem 0;
+}
+.menu .box-container .box .price span{
+  font-size: 1.5rem;
+  text-decoration: line-through;          /*tachado linea*/
+  font-weight: lighter;                   /*linea gruesa */
+}
+.menu .box-container .box:hover{          /*cursor en sima*/
+  background: #fff;                    /*color blanco*/
+}
+.menu .box-container .box:hover > *{     /*todo efecto del click cambia TODO(>*) lo que este dentro de la propiedad */
+  color: var(--black);
 }
