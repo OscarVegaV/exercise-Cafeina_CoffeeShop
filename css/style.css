@@ -328,3 +328,14 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   font-size: 1.5rem;
   color: var(--main-color);
 }
+.contact .row{                       /*para todo el contenedor*/
+  display: flex;
+  background: var(--black);
+  flex-wrap: wrap;                   /*si el elemeto no cabe, lo cambia de rrenglon*abajo */
+  gap: 1rem;
+}
+.contact .row .map{                 /*mapa */
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
