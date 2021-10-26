@@ -26,7 +26,7 @@ body{
 }
 header{
   background: var(--bg);
-  display: flex;                      /*propiedad hace que todos los elementos dentro de el se acomoden de una manera flexible*/
+  display: flex;                      /*propiedad (PADRE) hace que todos los elementos dentro de el se acomoden de una manera flexible*/
   align-items: center;                /*todos los items se acomodan al centro*/
   justify-content: space-between;     /*se ajusta de forma horiz y genera un espacio entre cada elemento*/
   padding: 1.5rem 7%;                 /*altura y lados del header*/
@@ -168,8 +168,8 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
 }
 .home{                                       
   min-height: 100vh;                                     /*altura minima del H de donde se vea*/
-  display: flex;
-  align-items: center;
+  display: flex;                                        /*padre flex*/
+  align-items: center;                                  /*padre flex*/
   background: url(../img/home-img.jpeg) no-repeat;      /*agregando img (../ para entrar a otras carpetas); norepit evita que la img se vea mas veces*/
   background-size: cover;                               /*va a tener el 100% de la altura */
   background-position: center;                          /*Img se va acomodar desde el centro hacia los lados de la pantalla */
@@ -335,7 +335,43 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   gap: 1rem;
 }
 .contact .row .map{                 /*mapa */
-  flex: 1 1 45rem;
+  flex: 1 1 45rem;                  /*se hace tan grande y tan pequeno como pueda*/
   width: 100%;
   object-fit: cover;
+}
+.contact .row form {                 /*formulario*/
+  flex: 1 1 45rem;                 /*define el acho y el alto*/
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.contact .row form{
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: #fff;
+}
+.contact .row form h3{
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: #fff;
+}
+.contact .row form .inputbox{
+  display: flex;                            /*esta etiqueta se utiliza por ser padre*/
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: var(--bg);
+  border: var(--border);
+}
+.contact .row form .inputbox span{
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+.contact .row form .inputbox input{
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: none;
+  background: none;
 }
