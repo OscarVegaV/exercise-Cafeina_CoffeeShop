@@ -375,3 +375,47 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   text-transform: none;
   background: none;
 }
+.blogs .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.blogs .box-container .box{
+  border: var(--border);
+}
+.blogs .box-container .box .image{
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;                                   /*cuando sale el contenedor image se va ocultar*/
+}
+.blogs .box-container .box .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.blogs .box-container .box:hover .image img{         /*cuando pase el cursor modifica la clase image que tiene un clase dentro*/
+transform: scale(1.2);                               /*la imagen va a crecer 1.2*/
+}
+.blogs .box-container .box .content{
+  padding: 2rem;
+}
+.blogs .box-container .box .content .title{
+  font-size: 2.5rem;
+  line-height: 1.5;                                 /*altura del renglon-- navegador interpreta el espacio entre lineas*/
+  color: #fff;
+}
+.blogs .box-container .box .content .title:hover{   /*cambio de color cuando pase el cursor*/
+  color: var(--main-color);
+}
+.blogs .box-container .box .content span{
+  color: var(--main-color);
+  display: block;                                  /*se comporta como un bloque*/
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+.blogs .box-container .box .content p{
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #ccc;
+  padding: 1rem 0;
+}
