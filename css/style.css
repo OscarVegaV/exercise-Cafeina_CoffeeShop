@@ -2,7 +2,7 @@
   --main-color: #d3ad7f;
   --black: #13131a;
   --bg: #010103;
-  --border: .1rem solid rgba(255,255,255,.3);
+  --border: .1rem solid rgba(255, 255, 255, 0.3);
 }
 *{                                    /*contenido General ***  */
   font-family: 'Roboto', sans-serif;
@@ -13,7 +13,7 @@
   border: 0;        
   text-decoration: none;              /*elimina el subrayado del hipervinculo*/
   text-transform: capitalize;         /* la primera letra del hipervinculo en mayuscula*/
-  transition: .2s linear ;            /*tiempo de transicion inicial (.2s) y el valor en que termina (linear) para los links internos*/
+  transition: .2s linear;             /*tiempo de transicion inicial (.2s) y el valor en que termina (linear) para los links internos*/
 }
 html{
   font-size: 62.5%;                   /*texto en % en cualquier pantalla*/
@@ -57,7 +57,7 @@ section{                              /*le da un pading a toda la seccion x y (t
   color: #fff;
   text-transform: uppercase;
   padding-bottom: 3.5rem;
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 .heading span{
   color: var(--main-color);
@@ -97,7 +97,7 @@ header .search-form{
   height: 5rem;
   display: flex;                      /*elemento padre ocupar de display flex */
   align-items: center;
-  transform: scale(0);                /**(se agranda)altura 0*/
+  transform: scaleY(0);                /**(se agranda)altura 0*/
   transform-origin: top;              /*modificacion en la parte de arriba*/
 }
 header .search-form.active{           /*clase active sobre el elmento(aparezca o desaparezca)*/
@@ -156,13 +156,13 @@ header .cart-items-container .cart-item img{              /*tamano de la imagen*
 header .cart-items-container .cart-item .content h3{      /*color y tamano de texto*/
   font-size: 2rem;
   color: var(--black);
-  padding-bottom: 5rem;
+  padding-bottom: .5rem;
 }
 header .cart-items-container .cart-item .content .price{  /*color y tamano de texto*/
   font-size: 1.5rem;
   color: var(--main-color);
 }
-header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
+header .cart-items-container .btn{     /*posicion del btn*/
   width: 100%;
   text-align: center;
 }
@@ -268,7 +268,7 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   color: #fff;
   margin: .3rem;
 }
-.products .box-container .box .icons a{            /*color a los a*/
+.products .box-container .box .icons a:hover{  /*color a los a*/
   background: var(--main-color);
 }
 .products .box-container .box .image{
@@ -343,11 +343,6 @@ header .cart-items-container .cart-item .content .btn{     /*posicion del btn*/
   flex: 1 1 45rem;                 /*define el acho y el alto*/
   padding: 5rem 2rem;
   text-align: center;
-}
-.contact .row form{
-  text-transform: uppercase;
-  font-size: 3.5rem;
-  color: #fff;
 }
 .contact .row form h3{
   text-transform: uppercase;
@@ -442,10 +437,9 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
 .footer .links{
   display: flex;
   justify-content: center;                    /*acomodo horizontal*/
-  flex-wrap: grap;
+  flex-wrap: wrap;
   padding: 2rem 0;
   gap: 1rem;
-
 }
 .footer .links a{
   padding: .7rem 2rem;
@@ -464,4 +458,39 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
 }
 .footer .credit span{
   color: var(--main-color);
+}
+/*--- Media Queries para responsive ---*/
+@media (max-width:991px){                           /*como se comporta de 0 hasta 991 PIXElES*/
+  html{
+    font-size: 55%;
+  }
+  header{
+    padding: 1.5rem 2rem;
+  }
+  selection{
+    padding: 2rem;
+  }
+}
+@media (max-width:768px){
+  #menu-btn{
+    display: inline-block;                        /*que se vea como un solo bloque en linea que esta alapar*/
+  }
+  header .navbar{
+    position: absolute;
+    top: 100%;
+    right: -100%;                                 /*con esas medidas saca el MENU la caja blanca*/
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);                 /*del 100% de la altura del dispositivo le reste 9.5rem*/
+  }
+  header .navbar.active{                         /*caracteristicas que modifican la clase active*/
+    right: 0;                                    /*hace que las opcines del menu aparezcan*/
+  }
+  header .navbar a{                              /*tamano y color del texto cuando aparece*/
+    color: var(--black);
+    display: block;
+    margin: 1.rem;
+    padding: .5rem;
+    font-size: 2rem;
+  }
 }
