@@ -437,7 +437,7 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
 .footer .links{
   display: flex;
   justify-content: center;                    /*acomodo horizontal*/
-  flex-wrap: wrap;
+  flex-wrap: wrap;                            /*acomoda los links*/
   padding: 2rem 0;
   gap: 1rem;
 }
@@ -460,7 +460,7 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
   color: var(--main-color);
 }
 /*--- Media Queries para responsive ---*/
-@media (max-width:991px){                           /*como se comporta de 0 hasta 991 PIXElES*/
+@media (max-width:991px){                           /*como se comporta de 769 hasta 991 PIXElES*/
   html{
     font-size: 55%;
   }
@@ -471,7 +471,7 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
     padding: 2rem;
   }
 }
-@media (max-width:768px){
+@media (max-width:768px){                         /*Hasta 768*/
   #menu-btn{
     display: inline-block;                        /*que se vea como un solo bloque en linea que esta alapar*/
   }
@@ -492,5 +492,25 @@ transform: scale(1.2);                               /*la imagen va a crecer 1.2
     margin: 1.rem;
     padding: .5rem;
     font-size: 2rem;
+  }
+  header .search-form{
+    width: 90%;
+    right: 2rem;
+  }
+  .home{
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+  }
+  .home .content h3{
+    font-size: 4.5rem;
+  }
+  .home .content p{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width:450px){                           /*hasta 450 px*/
+  html{
+    font-size: 50;
   }
 }
